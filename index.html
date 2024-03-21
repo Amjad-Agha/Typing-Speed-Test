@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --main-color: #2196f3;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+    }
+    body {
+      background-color: #eee;
+    }
+    .name {
+      text-align: center;
+      color: white;
+      background-color: var(--main-color);
+      font-size: 24px;
+      font-weight: bold;
+      padding: 15px 20px;
+    }
+    .container {
+      width: 767px;
+      margin: 10px auto;
+      text-align: center;
+    }
+    .message {
+      display: none;
+    }
+    .message .lvl {
+      color: var(--main-color);
+      font-size: 22px;
+    }
+    .message .seconds {
+      color: var(--main-color);
+      font-size: 22px;
+    }
+    .start {
+      color: white;
+      background-color: var(--main-color);
+      font-weight: bold;
+      padding: 15px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .the-word {
+      color: var(--main-color);
+      font-size: 60px;
+      font-weight: bold;
+      user-select: none;
+      margin: 10px 0;
+    }
+    .input {
+      width: 100%;
+      height: 45px;
+      border: 2px solid var(--main-color);
+    }
+    .input:focus {
+      outline: none;
+    }
+    .upcoming-words {
+      background-color: white;
+      padding: 15px;
+      margin: 10px 0;
+      min-height: 45px;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .upcoming-words span {
+      background-color: var(--main-color);
+      color: white;
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .control {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px;
+      margin: 10px 0;
+      min-height: 45px;
+    }
+    .control .time span,
+    .control .got,
+    .control .total {
+      color: var(--main-color);
+    }
+    .finish {
+      font-size: 45px;
+      font-weight: bold;
+    }
+    .finish div {
+      font-size: 30px;
+      color: #222;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="game">
+    <div class="name">typing speed test game</div>
+    <div class="container">
+      <div class="message">
+        you are playing on
+        <span class="lvl"></span> level & you have <span class="seconds"></span> seconds to type the word
+      </div>
+      <div class="start">start playing</div>
+      <div class="level-choosing">
+        <label for="level">Choose Your Level:</label>
+        <select name="level" id="level">
+          <option value="easy">Easy</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      <div class="the-word"></div>
+      <input type="text" class="input">
+      <div class="upcoming-words">words will show here</div>
+      <div class="control">
+        <div class="time">time left: <span></span> seconds</div>
+        <div class="score">score: <span class="got">0</span> from <span class="total"></span></div>
+      </div>
+      <div class="finish"></div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
